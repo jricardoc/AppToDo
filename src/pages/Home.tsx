@@ -27,12 +27,6 @@ export function Home() {
     }
 
     setTasks(oldTasks => [...oldTasks, newTask])
-
-    // Essa função foi criada para adicionar uma nova Task. Dentro do corpo dela, podemos perceber
-    // que recebe uma 'id' do tipo Number, 'title' do tipo String e 'done' do tipo Boolean que recebe
-    // um valor falso porque a Taks ainda não foi cumprida, ela está sendo adicionada. 
-    // Logo abaixo temos o setTasks que executa o trabalho de concatenação. Ele pega o valor antigo, e 
-    // adiciona a uma array de tasks. 
   }
 
   function handleToggleTaskDone(id: number) {
@@ -46,10 +40,6 @@ export function Home() {
 
     taskToBeMarkedAsDone.done = !taskToBeMarkedAsDone.done;
     setTasks(updatedTasks);
-
-    // Dessa forma foi colocado um map para retornar um spred do objeto
-    // Pesquisar Shallow Copy em JavaScript
-    //TODO - toggle task done if exists
   }
 
   function handleRemoveTask(id: number) {
@@ -68,12 +58,6 @@ export function Home() {
         }
       }
     ])
-
-    // Se o id que está sendo recebido for o id que é diferente desta Task que está sendo passada agora,
-    // ele irá retornar para o updatedTasks, se for igual, ele vai atender o filtro e não vai retornar. Ou seja
-    // será apagado.
-
-    //TODO - remove task from state
   }
 
   function handleEditTask({ taskId, taskNewTitle }: EditTaskArgs) {
